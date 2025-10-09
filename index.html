@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Van Mitra - Friend of Forest</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<!-- Icon Font Css -->
+	<link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+	<!-- Slick Slider  CSS -->
+	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- carousel -->
+	<!-- <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet"> -->
+	<style>
+		.carousel-container {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			padding: 20px;
+		}
+
+		.carousel-track {
+			display: flex;
+			transition: transform 0.6s ease-in-out;
+		}
+
+		/* Product Cards */
+		.card {
+			flex: 0 0 260px;
+			margin-right: 16px;
+			background: #fdfdfd;
+			border-radius: 12px;
+			padding: 15px;
+			text-align: center;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+		}
+
+		.card img {
+			width: 100%;
+			max-height: 160px;
+			object-fit: contain;
+			border-radius: 8px;
+			margin-bottom: 10px;
+		}
+
+		.card h3 {
+			margin: 8px 0 4px;
+			font-size: 16px;
+			color: #111827;
+		}
+
+		.card .price {
+			font-size: 15px;
+			font-weight: bold;
+			color: #16a34a;
+		}
+
+		/* Video Slides - 3 at a time */
+		.video-slide {
+			flex: 0 0 calc(100% / 3.073);
+			position: relative;
+			padding-bottom: 220px;
+			/* 16:9 ratio */
+			height: 0;
+			margin-right: 16px;
+		}
+
+		.video-slide iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+			border-radius: 12px;
+		}
+
+		/* Buttons for video carousel */
+		.carousel-btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(44, 187, 118, 0.6);
+			color: #fff;
+			border: none;
+			padding: 10px 15px;
+			border-radius: 50%;
+			cursor: pointer;
+			z-index: 10;
+		}
+
+		.carousel-btn:hover {
+			background: rgba(242, 146, 34, 0.8);
+		}
+
+		.prev {
+			left: 30px;
+		}
+
+		.next {
+			right: 30px;
+		}
+	</style>
+</head>
+
+<body id="top">
+
+	<header>
+		<div class="header-top-bar">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-10 col-sm-8">
+						<ul class="top-bar-info list-inline-item pl-0 mb-0">
+							<li class="list-inline-item"><img src="images/email-icon.png"
+									class="mr-2">kutusholagro@gmail.com</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-sm-4">
+						<div class="top-right-bar mt-2 mt-lg-0">
+							<div style="background-color: #048441; border-radius: 50px; padding:3px 7px;"
+								class="text-center">
+								<a href="#" target="_blank"><i class="icofont-instagram mr-4"></i></a>
+								<a href="#" target="_blank"><i class="icofont-facebook mr-4"></i></a>
+								<a href="#" target="_blank"><i class="icofont-youtube mr-2"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navigation" id="navbar">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo.png" alt="" class="img-fluid">
+				</a>
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
+					aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icofont-navigation-menu"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarmain">
+					<ul class="navbar-nav ml-auto mr-auto">
+						<li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+						<li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="farm-visit.html">Farm Visit</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Lab Reports</a></li>
+						<li class="nav-item"><a class="nav-link" href="blog.html">Blog </a></li>
+						<li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="search d-sm-none d-lg-block">
+					<input type="text" name="search" placeholder="Search"
+						style="height: 15px; border: none; background: transparent;">
+					<i class="icofont-search-1"></i>
+				</div>
+				<i class="icofont-cart icofont-2x ml-3 d-sm-none d-lg-block carticon"></i>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Slider Start -->
+	<section class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-xl-7">
+					<div class="block">
+						<span class="text-md text-light">rooted in</span>
+						<h1 class="mb-5 text-light">purpose</h1>
+						<span class="text-md text-light">thriving with</span>
+						<h1 class="mb-5 text-light">nature</h1>
+						<div class="btn-container ">
+							<a href="#" target="_blank" class="btn btn-main-2 btn-icon btn-rounded-full">EXPLORE OUR
+								FARM
+								<img src="images/arrow-right-icon.png" class="ml-2">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-xs about">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 col-sm-6 align-content-right">
+					<img src="images/bigger-logo.png" alt="" class="img-fluid ml-lg-5 ml-sm-1">
+				</div>
+				<div class="col-lg-6 border-left">
+					<div class="about-content pl-lg-5 pl-sm-0 mt-4 mt-lg-0">
+						<h4 class="title-color">Rooted in Purpose, Growing with Nature</h4>
+						<div class="divider"></div>
+						<p class="mt-4 mb-lg-5 mb-sm-0 text-dark lh1-2">Van Mitra, by Kutushol Agroforestry,
+							is on a mission to make farming healthier and more sustainable. We promote organic,
+							chemical-free agriculture, empowering tribal communities in Jharkhand India by training and
+							employment, and bring clean, natural produce to conscious consumers.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="features section-xs"
+		style="background-image: url(images/orange-bg.png); background-repeat: no-repeat; background-position:center center; background-size: cover;">
+		<div class="container mb-1">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="row justify-content-center">
+						<div class="col-lg-10 text-center">
+							<div class="mb-4">
+								<h2 class="text-light CoconPro">ABOUT US</h2>
+								<div class="divider-2 mx-auto my-3"></div>
+								<p class="text-dark lh1-2">Cultivating Sustainability, Empowering Communities </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container mt-2 mrb-200">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="feature-block d-lg-flex" style="padding-bottom: -70px;">
+						<div class="feature-item  mb-5 mb-lg-0" style="background-image: url('images/our-goal.jpg');
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;">
+							<a href="about-us.html" class="btn btn-light rounded-1">About Van Mitra</a>
+						</div>
+
+						<div class="feature-item  mb-5 mb-lg-0" style="background-image: url('images/our-mission.jpg');
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;">
+							<a href="about-us.html#founders" class="btn btn-light btn-lg rounded-1 d-inline">The
+								Founders</a>
+						</div>
+
+						<div class="feature-item  mb-5 mb-lg-0" style="background-image: url('images/our-vision.jpg');
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;">
+							<a href="about-us.html#our-farm" class="btn btn-light btn-lg rounded-1 d-inline">Our
+								Farm</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section-xs appoinment mt-150 impact-bottom">
+		<div class="container">
+			<div class="row align-items-start">
+				<div class="col-lg-7 col-md-7 col-sm-12 pl-lg-5 pl-sm-1 pt-5"
+					style="background-image: url('images/bg-leaf.png'); background-position: top left; background-repeat: no-repeat; background-size: contain;">
+					<div class="appoinment-content p-5">
+						<h2 class="title-color-2 CoconPro">Moringa</h2>
+						<div class="divider-2 mb-3"></div>
+						<h6 class="mb-3 mt-3 title-color">The Super Food page</h6>
+						<p class="lh1-2">
+							For centuries, Moringa (Moringa oleifera) has been celebrated as a “miracle tree.” Today,
+							modern science validates what traditional wisdom knew all along—Moringa is one of the
+							world’s most nutrient-dense, healing plants.
+						</p>
+						<a href="moringa-the-super-food.html" class="btn btn-main-2 btn-round-full">Learn More <i
+								class="icofont-simple-right ml-2"></i></a>
+						<!-- <img src="images/our-farm.jpg" class="img-fluid rounded-2 mt-4"
+							style="height: 285px; width: 100%;"> -->
+					</div>
+				</div>
+				<div class="col-lg-5 col-md-5 col-sm-12 p-lg-5 p-sm-1">
+					<img src="images/moringa.jpg" class="img-fluid rounded-2 mt-4" style="height: 285px; width: 100%;">
+					<!-- <div class="appoinment-wrap mt-5 mt-lg-0 mb-3">
+						<div class="outer-container-1">
+							<div class="line-box">
+								<div class="row1">
+									<div class="heading">Our Goals</div>
+									<div class="icon">
+										<img src="images/goal.png" alt="">
+									</div>
+								</div>
+								<div class="divider-2 mb-3"></div>
+								<div class="row2">
+									By 2025, we’ll plant 35,000 Moringa trees. By 2030, we aim to support 500,000 trees
+									across the region, training local farmers to grow and sell Moringa for steady
+									income.
+								</div>
+							</div>
+						</div>
+					</div> -->
+					<!-- <div class="appoinment-wrap mt-5 mt-lg-0">
+						<div class="outer-container">
+							<div class="line-box">
+								<div class="row1">
+									<div class="heading-1">Community Support</div>
+									<div class="icon">
+										<img src="images/support.png" alt="">
+									</div>
+								</div>
+								<div class="divider mb-3"></div>
+								<div class="row2">
+									We support tribal farmers by sharing sustainable farming practices and helping them
+									cultivate organic Moringa. By aggregating their produce and ensuring fair market
+									access, we promote better incomes and long-term economic stability,
+									fostering growth and self-reliance within the community.
+								</div>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+	</section>
+
+	<section class="section pt-5 pb-5 impact">
+		<div class="container">
+			<div class="row justify-content-center mb-2">
+				<div class="col-lg-4 text-center">
+					<img src="images/impact.jpg" class="img-fluid rounded-2">
+				</div>
+				<div class="col-lg-8 text-left">
+					<div class="section-title pl-lg-5 pl-md-5 pl-sm-0 padt">
+						<h2 class="title-color-2 CoconPro">OUR IMPACT</h2>
+						<div class="divider-2 my-4"></div>
+						<p class="lh1-2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+							diam nonummy nibh euismod
+							tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+							nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+							Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+							illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
+							feugiat
+							nulla facilisis at vero eros et accumsan et iusto odio dignissimqui blandit praesent
+							luptatum
+							zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mrb">
+				<div class="col-lg-3 col-md-12 col-sm-12">
+					<div class="icon-box">
+						<div class="icon"><img src="images/challenges-icon.png" class="img-fluid"></div>
+						<div class="line-box">
+							<h3>The Challenges</h3>
+							<ul>
+								<li>Soil quality declined due
+									to years of chemical
+									farming practices and
+									lack of proper care.</li>
+								<li>Unemployment and
+									poverty in tribal
+									communities.</li>
+								<li>Environmental
+									degradation and
+									harmful agricultural
+									practices.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-12 col-sm-12">
+					<div class="icon-box">
+						<div class="icon"><img src="images/solution-icon.png" class="img-fluid"></div>
+						<div class="line-box">
+							<h3>Our Solutions</h3>
+							<ul>
+								<li>Restore soil with organic
+									techniques like
+									vermicomposting and
+									biogas.</li>
+								<li>Plant 500,000 Moringa
+									trees to boost green
+									cover.</li>
+								<li>Train farmers in
+									sustainable practices
+									and provide year-round
+									employment.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-12 col-sm-12">
+					<div class="icon-box">
+						<div class="icon"><img src="images/result-icon.png" class="img-fluid"></div>
+						<div class="line-box">
+							<h3>Results So Far</h3>
+							<p>
+								In six months, we've harvested 400 kg of Moong, grown fodder, and planted 20,000 Moringa
+								trees, now ready for harvest.
+								Our work has rejuvenated the ecosystem, bringing
+								birds, butterflies, and small animals to the previously
+								barren land, boosting regional biodiversity
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-12 col-sm-12">
+					<div class="icon-box">
+						<div class="icon"><img src="images/unique-icon.png" class="img-fluid"></div>
+						<div class="line-box">
+							<h3>Why Weʼre Unique</h3>
+							<p>
+								Our approach blends agro forestry, community empowerment & a self-sustaining ecosystem
+								powered by local resources, promoting environmental health, economic growth, and
+								sustainability while enhancing ecological balance & resilience for the community.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section pt-4 pb-2"
+		style="background-image: url('images/pink-bg.png'); background-position: top center; background-repeat: no-repeat; background-size: cover;">
+		<div class="container">
+			<div class="row justify-content-center mb-2">
+				<div class="col-lg-12 text-center">
+					<h2 class="title-color CoconPro">SHOP PRODUCTS</h2>
+					<div class="divider mx-auto my-4"></div>
+					<h3>
+						100% Chemical Free
+					</h3>
+					<p class="lh1-2">Organically Grown Products</p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<section class="section-xs">
+		<div class="container">
+			<div class="carousel-container" id="productCarousel">
+				<div class="carousel-track">
+					<div class="card">
+						<img src="images/service/service-1.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Product Name</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+							<h3 class="mb-4 title-color"><i class="icofont-rupee"></i>1999</h3>
+							<a href="#" target="_blank" class="btn btn-main-2 btn-round-full"><i
+									class="icofont-shopping-cart mr-3"></i>Buy Now</a>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/service/service-1.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Product Name</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+							<h3 class="mb-4 title-color"><i class="icofont-rupee"></i>1999</h3>
+							<a href="#" target="_blank" class="btn btn-main-2 btn-round-full"><i
+									class="icofont-shopping-cart mr-3"></i>Buy Now</a>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/service/service-1.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Product Name</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+							<h3 class="mb-4 title-color"><i class="icofont-rupee"></i>1999</h3>
+							<a href="#" target="_blank" class="btn btn-main-2 btn-round-full"><i
+									class="icofont-shopping-cart mr-3"></i>Buy Now</a>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/service/service-1.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Product Name</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+							<h3 class="mb-4 title-color"><i class="icofont-rupee"></i>1999</h3>
+							<a href="#" target="_blank" class="btn btn-main-2 btn-round-full"><i
+									class="icofont-shopping-cart mr-3"></i>Buy Now</a>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/service/service-1.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Product Name</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+							<h3 class="mb-4 title-color"><i class="icofont-rupee"></i>1999</h3>
+							<a href="#" target="_blank" class="btn btn-main-2 btn-round-full"><i
+									class="icofont-shopping-cart mr-3"></i>Buy Now</a>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/service/service-1.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Product Name</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+							<h3 class="mb-4 title-color"><i class="icofont-rupee"></i>1999</h3>
+							<a href="#" target="_blank" class="btn btn-main-2 btn-round-full"><i
+									class="icofont-shopping-cart mr-3"></i>Buy Now</a>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/service/service-1.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Product Name</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+							<h3 class="mb-4 title-color"><i class="icofont-rupee"></i>1999</h3>
+							<a href="#" target="_blank" class="btn btn-main-2 btn-round-full"><i
+									class="icofont-shopping-cart mr-3"></i>Buy Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section-xs testimonial-2 gray-bg">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-7">
+					<div class="col-lg-12 text-center">
+						<h2>Our Testimonial</h2>
+						<div class="divider mx-auto my-4"></div>
+						<p>Hear from those who’ve experienced VanMitra—real stories of wellness, sustainability, and
+							community impact through our organic Moringa journey.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="carousel-container" id="videoCarousel">
+					<button class="carousel-btn prev">&#10094;</button>
+					<button class="carousel-btn next">&#10095;</button>
+					<div class="carousel-track">
+						<div class="video-slide"><iframe
+								src="https://www.youtube-nocookie.com/embed/bZKuSi1ac3s?si=Uq5lNEbWouex0NCr"
+								allowfullscreen></iframe></div>
+						<div class="video-slide"><iframe
+								src="https://www.youtube-nocookie.com/embed/iurGL-KPC-k?si=XoWM4jIKn3DiQgFF"
+								allowfullscreen></iframe></div>
+						<div class="video-slide"><iframe
+								src="https://www.youtube-nocookie.com/embed/_rnRh3ylFjA?si=3TTxINwQ536a-neC"
+								allowfullscreen></iframe></div>
+						<div class="video-slide"><iframe
+								src="https://www.youtube-nocookie.com/embed/W0IPoLX0B98?si=NcJvYpiKzzp3GQhw"
+								allowfullscreen></iframe></div>
+						<div class="video-slide"><iframe
+								src="https://www.youtube-nocookie.com/embed/bZKuSi1ac3s?si=Uq5lNEbWouex0NCr"
+								allowfullscreen></iframe></div>
+						<div class="video-slide"><iframe
+								src="https://www.youtube-nocookie.com/embed/iurGL-KPC-k?si=XoWM4jIKn3DiQgFF"
+								allowfullscreen></iframe></div>
+						<div class="video-slide"><iframe
+								src="https://www.youtube-nocookie.com/embed/_rnRh3ylFjA?si=3TTxINwQ536a-neC"
+								allowfullscreen></iframe></div>
+						<div class="video-slide"><iframe
+								src="https://www.youtube-nocookie.com/embed/W0IPoLX0B98?si=NcJvYpiKzzp3GQhw"
+								allowfullscreen></iframe></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<section class="section-xs appoinment footer-top">
+		<div class="container">
+			<div class="row align-items-start row-wrapper1">
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<div class="appoinment-content">
+						<img src="images/IMG_0021.jpg" alt="" class="img-fluid rounded-2">
+					</div>
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-12">
+					<div class="appoinment-wrap mt-5 mt-lg-0">
+						<h2 class="mb-3 title-color-2 CoconPro">GET INVOLVED</h2>
+						<div class="divider-2"></div>
+						<h6 class="mb-3 mt-3 title-color">Sub-Heading Here...</h6>
+						<p class="mb-4 lh1-2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+							nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+							enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+							nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+							hendrerit in vulputate velit nostrud exerci tation ullamcorper suscipit lobortis nisl
+							ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+							hendrerit in vulputate veli.
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+							nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+							enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+							nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+							hendrerit in vulputate velit nostrud
+						</p>
+					</div>
+				</div>
+				<div class="overlap-section">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12 pr-4 mb-sm-3">
+							<h5 class="title-color-2">Training & Consulting</h5>
+							<p class="text-light lh1-2">Gain practical knowledge in sustainable farming with our
+								hands-on training programs or consulting services, designed for farmers and
+								businesses aiming to adopt eco-friendly agricultural practices.</p>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12 pl-lg-5 pl-sm-0 brl mb-sm-3">
+							<h5 class="title-color-2">Partner with Us</h5>
+							<p class="text-light lh1-2">Partner with Van Mitra to support sustainable agriculture and
+								empower local communities through eco-friendly practices that nurture the
+								environment and strengthen rural livelihoods.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- footer Start -->
+	<footer class="footer section-sm" style="border-top: 1px solid #026937;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mr-auto col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<div class="logo mb-4">
+							<img src="images/logo-footer.png" alt="" class="img-fluid">
+						</div>
+						<h3 class="text-light">Reach out</h3>
+						<p class="text-light">for inquiries, partnerships, or feedback.</p>
+
+						<ul class="list-inline footer-socials mt-4">
+							<li class="list-inline-item br-2">
+								<a href="#">
+									<img src="images/fb-icon.png" class="">
+								</a>
+							</li>
+							<li class="list-inline-item br-2">
+								<a href="#">
+									<img src="images/insta-icon.png" class="">
+								</a>
+							</li>
+							<li class="list-inline-item br-2">
+								<a href="#">
+									<img src="images/twitter-icon.png" class="">
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#">
+									<img src="images/youtube-icon.png" class="">
+								</a>
+							</li>
+						</ul>
+						<p><a href="#" class="text-light"><i class="icofont-phone mr-2"></i>+91 99990 40751</a></p>
+						<p><a href="#" class="text-light"><i class="icofont-email mr-2"></i>kutusholagro@gmail.com</a>
+						</p>
+					</div>
+				</div>
+
+
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="widget widget-contact mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-3">CONTACT US!</h4>
+						<div class="subscribe-form text-lg-right mt-5 mt-lg-0 mt-sm-2">
+							<form action="#" class="">
+								<div class="form-group indes">
+									<input type="text" class="form-control inscon" placeholder="Name">
+								</div>
+								<div class="form-group indes">
+									<input type="email" class="form-control inscon" placeholder="Email">
+								</div>
+								<div class="form-group indes">
+									<input type="number" class="form-control inscon" placeholder="Phone">
+								</div>
+								<div class="form-group indes">
+									<textarea class="form-control inscon" placeholder="Message" rows="2"></textarea>
+								</div>
+								<a href="#"
+									class="btn btn-main btn-round-full btn-sm pt-2 pb-2 pr-3 pl-3 float-left">Subscribe</a>
+							</form>
+						</div>
+						<!-- <div class="footer-contact-block mb-4">
+							<div class="icon d-flex align-items-center">
+								<i class="icofont-email mr-3"></i>
+								<span class="h6 mb-0">Support Available for 24/7</span>
+							</div>
+							<h4 class="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
+						</div>
+
+						<div class="footer-contact-block">
+							<div class="icon d-flex align-items-center">
+								<i class="icofont-support mr-3"></i>
+								<span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+							</div>
+							<h4 class="mt-2"><a href="tel:+23-345-67890">+23-456-6588</a></h4>
+						</div> -->
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-btm py-3 mt-4">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-lg-6 col-sm-12">
+						<div class="copyright">
+							<ul class="list-inline">
+								<li class="list-inline-item text-xs"><a href="#"
+										class="text-light font-weight-normal">Terms and Conditions</a> <span
+										class="text-dark ml-2">|</span> </li>
+								<li class="list-inline-item text-xs"><a href="#"
+										class="text-light font-weight-normal">Privacy Policy</a> <span
+										class="text-dark ml-2">|</span></li>
+								<li class="list-inline-item text-xs"><a href="#"
+										class="text-light font-weight-normal">Van Mitra</a></li>
+								<li class="list-inline-item text-light text-xs font-weight-normal">© 2025 All rights
+									reserved. <span class="text-dark ml-2">|</span> </li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6 col-sm-12">
+						<div class="copyright text-right text-sm-right">
+							<ul class="list-inline">
+								<li class="list-inline-item text-light text-xs font-weight-normal">
+									design by <a href="https://mayatechnosoft.com"
+										title="website design company in delhi 9953707087" target="_blank"
+										class="text-light font-weight-normal">mayatechnosoft.com</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<a class="backtop js-scroll-trigger" href="#top">
+							<i class="icofont-arrow-up"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- 
+    Essential Scripts
+    =====================================-->
+
+
+	<!-- Main jQuery -->
+	<script src="plugins/jquery/jquery.js"></script>
+	<!-- Bootstrap 4.3.2 -->
+	<script src="plugins/bootstrap/js/popper.js"></script>
+	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="plugins/counterup/jquery.easing.js"></script>
+	<!-- Slick Slider -->
+	<script src="plugins/slick-carousel/slick/slick.min.js"></script>
+	<!-- carousel -->
+	<!-- <script src="js/owl-carousel/owl.carousel.js"></script>
+	<script src="js/owl-carousel/custom.js"></script> -->
+	<script src="js/script.js"></script>
+	<script>
+		$(document).ready(function () {
+			// --- Product carousel (auto slide) ---
+			let productIndex = 0;
+			const $productTrack = $("#productCarousel .carousel-track");
+			const productCardWidth = $("#productCarousel .card").outerWidth(true);
+			const totalProducts = $("#productCarousel .card").length;
+
+			setInterval(function () {
+				productIndex++;
+				if (productIndex >= totalProducts) { productIndex = 0; }
+				$productTrack.css("transform", "translateX(" + (-productCardWidth * productIndex) + "px)");
+			}, 3000);
+
+			// --- Video carousel (manual with buttons, 3 at a time) ---
+			let videoIndex = 0;
+			const $videoTrack = $("#videoCarousel .carousel-track");
+			const totalVideos = $("#videoCarousel .video-slide").length;
+
+			$(".next").click(function () {
+				if (videoIndex < totalVideos - 3) {
+					videoIndex++;
+					$videoTrack.css("transform", "translateX(" + (-100 / 3 * videoIndex) + "%)");
+				}
+			});
+
+			$(".prev").click(function () {
+				if (videoIndex > 0) {
+					videoIndex--;
+					$videoTrack.css("transform", "translateX(" + (-100 / 3 * videoIndex) + "%)");
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>
