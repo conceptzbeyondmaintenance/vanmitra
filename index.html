@@ -112,6 +112,14 @@
 		.next {
 			right: 30px;
 		}
+
+		.shop-banner {
+		    background-image: url('images/shop_now.png');
+		    background-position: top center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		    height: 300px;
+		}
 	</style>
 </head>
 
@@ -355,7 +363,9 @@ background-repeat: no-repeat;">
 		</div>
 
 	</section>
-	<section class="section-xs">
+	<section class="shop-banner"></section>
+
+	<!-- <section class="section-xs">
 		<div class="container">
 			<div class="carousel-container" id="productCarousel">
 				<div class="carousel-track">
@@ -432,7 +442,7 @@ background-repeat: no-repeat;">
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<section class="section-xs testimonial-2 gray-bg">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -513,9 +523,28 @@ background-repeat: no-repeat;">
 			</div>
 		</div>
 	</section>
-	
+
 	<div id="footer"></div>
-	<script>
+	
+</body>
+
+</html>
+<script>
+    // Load another page into the div
+    fetch("header.html")
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
+      })
+      .catch(err => console.error("Failed to load page:", err));
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("footer").innerHTML = html;
+      })
+      .catch(err => console.error("Failed to load page:", err));
+  </script>
+  <script>
 		$(document).ready(function () {
 			// --- Product carousel (auto slide) ---
 			let productIndex = 0;
@@ -549,22 +578,4 @@ background-repeat: no-repeat;">
 			});
 		});
 	</script>
-</body>
-
-</html>
-<script>
-    // Load another page into the div
-    fetch("header.html")
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("header").innerHTML = html;
-      })
-      .catch(err => console.error("Failed to load page:", err));
-    fetch("footer.html")
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("footer").innerHTML = html;
-      })
-      .catch(err => console.error("Failed to load page:", err));
-  </script>
 
