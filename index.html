@@ -22,114 +22,98 @@
 	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
 	<script src="plugins/jquery/jquery.js"></script>
-
-
+	<!-- Bootstrap 4.3.2 -->
+	<script src="plugins/bootstrap/js/popper.js"></script>
+	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Slick Slider -->
+	<script src="plugins/slick-carousel/slick/slick.min.js"></script>
+	<!-- carousel -->
+	<!-- <script src="js/owl-carousel/owl.carousel.js"></script>
+	<script src="js/owl-carousel/custom.js"></script> -->
+	<script src="js/script.js"></script>
 	<!-- carousel -->
 	<!-- <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet"> -->
 	<style>
-		.carousel-container {
-			position: relative;
-			width: 100%;
-			overflow: hidden;
-			padding: 20px;
-		}
+	.carousel-container {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		padding: 20px;
+	}
+	.carousel-track {
+		display: flex;
+		transition: transform 0.6s ease-in-out;
+	}
 
-		.carousel-track {
-			display: flex;
-			transition: transform 0.6s ease-in-out;
-		}
+	.video-slide {
+		flex: 0 0 calc(100% / 3.073);
+		position: relative;
+		padding-bottom: 220px;
+		height: 0;
+		margin-right: 16px;
+	}
 
-		/* Product Cards */
-		.card {
-			flex: 0 0 260px;
-			margin-right: 16px;
-			background: #fdfdfd;
-			border-radius: 12px;
-			padding: 15px;
-			text-align: center;
-			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-		}
+	/* Tablet */
+	@media (max-width: 992px) {
+	  .video-slide {
+	    flex: 0 0 calc(50% - 16px);
+	    padding-bottom: 280px;
+	  }
+	}
 
-		.card img {
-			width: 100%;
-			max-height: 160px;
-			object-fit: contain;
-			border-radius: 8px;
-			margin-bottom: 10px;
-		}
+	.video-slide iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 12px;
+		border: 0;
+	}
 
-		.card h3 {
-			margin: 8px 0 4px;
-			font-size: 16px;
-			color: #111827;
-		}
+	/* Touch overlay for safe tapping */
+	.video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 99;
+		background: transparent;
+		cursor: pointer;
+	}
 
-		.card .price {
-			font-size: 15px;
-			font-weight: bold;
-			color: #16a34a;
-		}
+	.carousel-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(44, 187, 118, 0.6);
+		color: #fff;
+		border: none;
+		padding: 10px 15px;
+		border-radius: 50%;
+		cursor: pointer;
+		z-index: 99999;
+		touch-action: none;
+	}
+	.carousel-btn:hover {
+		background: rgba(242, 146, 34, 0.8);
+	}
+	.prev { left: 30px; }
+	.next { right: 30px; }
 
-		/* Video Slides - 3 at a time */
-		.video-slide {
-			flex: 0 0 calc(100% / 3.073);
-			position: relative;
-			padding-bottom: 220px;
-			/* 16:9 ratio */
-			height: 0;
-			margin-right: 16px;
-		}
-
-		.video-slide iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border: 0;
-			border-radius: 12px;
-		}
-
-		/* Buttons for video carousel */
-		.carousel-btn {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			background: rgba(44, 187, 118, 0.6);
-			color: #fff;
-			border: none;
-			padding: 10px 15px;
-			border-radius: 50%;
-			cursor: pointer;
-			z-index: 10;
-		}
-
-		.carousel-btn:hover {
-			background: rgba(242, 146, 34, 0.8);
-		}
-
-		.prev {
-			left: 30px;
-		}
-
-		.next {
-			right: 30px;
-		}
-
-		.shop-banner {
-		    background-image: url('images/shop_now.png');
-		    background-position: top center;
-		    background-repeat: no-repeat;
-		    background-size: cover;
-		    height: 300px;
-		}
-	</style>
+	.shop-banner {
+	    background-image: url('images/shop_now.png');
+	    height: 300px;
+	    background-size: cover;
+	    background-position: top center;
+	    background-repeat: no-repeat;
+	}
+</style>
 </head>
 
 <body id="top">
-
 	<div id="header"></div>
-
 	<!-- Slider Start -->
 	<section class="banner">
 		<div class="container">
@@ -137,9 +121,9 @@
 				<div class="col-lg-6 col-md-12 col-xl-7">
 					<div class="block">
 						<span class="text-md text-light">rooted in</span>
-						<h1 class="mb-5 text-light">purpose</h1>
+						<h1 class="mb-lg-5 mb-2 text-light">purpose</h1>
 						<span class="text-md text-light">thriving with</span>
-						<h1 class="mb-5 text-light">nature</h1>
+						<h1 class="mb-lg-5 mb-2 text-light">nature</h1>
 						<div class="btn-container ">
 							<a href="#" target="_blank" class="btn btn-main-2 btn-icon btn-rounded-full">EXPLORE OUR
 								FARM
@@ -461,27 +445,43 @@ background-repeat: no-repeat;">
 			</div>
 			<div class="row align-items-center">
 				<div class="carousel-container" id="videoCarousel">
+
 					<button class="carousel-btn prev">&#10094;</button>
 					<button class="carousel-btn next">&#10095;</button>
+
 					<div class="carousel-track">
-						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/REuksD0JTqI?si=REuksD0JTqI"
-								allowfullscreen></iframe></div>
-						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/G-fBilfhKSg?si=XoWM4jIKn3DiQgFF"
-								allowfullscreen></iframe></div>
-						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/Z6kGtzMFuhs?si=3TTxINwQ536a-neC"
-								allowfullscreen></iframe></div>
-						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/3SK45AX_FJk?si=NcJvYpiKzzp3GQhw"
-								allowfullscreen></iframe></div>
-						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/3Va-EWYicvE?si=Uq5lNEbWouex0NCr"
-								allowfullscreen></iframe></div>
+
+						<div class="video-slide">
+							<div class="video-overlay"></div>
+							<iframe src="https://www.youtube.com/embed/REuksD0JTqI?enablejsapi=1" allowfullscreen></iframe>
+						</div>
+
+						<div class="video-slide">
+							<div class="video-overlay"></div>
+							<iframe src="https://www.youtube.com/embed/G-fBilfhKSg?enablejsapi=1" allowfullscreen></iframe>
+						</div>
+
+						<div class="video-slide">
+							<div class="video-overlay"></div>
+							<iframe src="https://www.youtube.com/embed/Z6kGtzMFuhs?enablejsapi=1" allowfullscreen></iframe>
+						</div>
+
+						<div class="video-slide">
+							<div class="video-overlay"></div>
+							<iframe src="https://www.youtube.com/embed/3SK45AX_FJk?enablejsapi=1" allowfullscreen></iframe>
+						</div>
+
+						<div class="video-slide">
+							<div class="video-overlay"></div>
+							<iframe src="https://www.youtube.com/embed/3Va-EWYicvE?enablejsapi=1" allowfullscreen></iframe>
+						</div>
+
 					</div>
+
 				</div>
 			</div>
+
+		  </div>
 		</div>
 	</section>
 	<section class="section-xs appoinment footer-top">
@@ -523,53 +523,48 @@ background-repeat: no-repeat;">
 
 </html>
 <script>
-    // Load another page into the div
-    fetch("header.html")
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("header").innerHTML = html;
-      })
-      .catch(err => console.error("Failed to load page:", err));
-    fetch("footer.html")
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("footer").innerHTML = html;
-      })
-      .catch(err => console.error("Failed to load page:", err));
- </script>
- <script>
-	$(document).ready(function () {
-		// --- Product carousel (auto slide) ---
-		let productIndex = 0;
-		const $productTrack = $("#productCarousel .carousel-track");
-		const productCardWidth = $("#productCarousel .card").outerWidth(true);
-		const totalProducts = $("#productCarousel .card").length;
+   // Load header and footer
+fetch("header.html").then(r=>r.text()).then(t=>header.innerHTML=t);
+fetch("footer.html").then(r=>r.text()).then(t=>footer.innerHTML=t);
 
-		setInterval(function () {
-			productIndex++;
-			if (productIndex >= totalProducts) { productIndex = 0; }
-			$productTrack.css("transform", "translateX(" + (-productCardWidth * productIndex) + "px)");
-		}, 3000);
+// VIDEO CAROUSEL FUNCTIONALITY
+$(document).ready(function () {
 
-		// --- Video carousel (manual with buttons, 3 at a time) ---
-		let videoIndex = 0;
-		const $videoTrack = $("#videoCarousel .carousel-track");
-		const totalVideos = $("#videoCarousel .video-slide").length;
+	let current = 0;
+	const $track = $(".carousel-track");
+	const totalSlides = $(".video-slide").length;
 
-		$(".next").click(function () {
-			if (videoIndex < totalVideos - 3) {
-				videoIndex++;
-				$videoTrack.css("transform", "translateX(" + (-100 / 3 * videoIndex) + "%)");
-			}
-		});
+	function slidesView() {
+		return $(window).width() < 992 ? 2 : 3;
+	}
 
-		$(".prev").click(function () {
-			if (videoIndex > 0) {
-				videoIndex--;
-				$videoTrack.css("transform", "translateX(" + (-100 / 3 * videoIndex) + "%)");
-			}
-		});
+	function maxIndex() {
+		return Math.max(0, totalSlides - slidesView());
+	}
+
+	function updateCarousel() {
+		$track.css("transform", `translateX(${-100/slidesView() * current}%)`);
+		$(".video-overlay").show();
+	}
+
+	$(".next").on("click touchstart", function (e) {
+		e.preventDefault();
+		if (current < maxIndex()) current++;
+		updateCarousel();
 	});
-	</script>
+
+	$(".prev").on("click touchstart", function (e) {
+		e.preventDefault();
+		if (current > 0) current--;
+		updateCarousel();
+	});
+
+	$(".video-overlay").on("click touchend", function () {
+		let iframe = $(this).siblings("iframe")[0];
+		$(this).hide();
+		iframe.src += "&autoplay=1";
+	});
+});
+</script>
 
 
