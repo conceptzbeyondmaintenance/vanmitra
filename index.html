@@ -21,6 +21,9 @@
 	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
 	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
+	<script src="plugins/jquery/jquery.js"></script>
+
+
 	<!-- carousel -->
 	<!-- <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet"> -->
 	<style>
@@ -471,23 +474,13 @@ background-repeat: no-repeat;">
 								src="https://www.youtube-nocookie.com/embed/Z6kGtzMFuhs?si=3TTxINwQ536a-neC"
 								allowfullscreen></iframe></div>
 						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/W0IPoLX0B98?si=NcJvYpiKzzp3GQhw"
+								src="https://www.youtube-nocookie.com/embed/3SK45AX_FJk?si=NcJvYpiKzzp3GQhw"
 								allowfullscreen></iframe></div>
 						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/bZKuSi1ac3s?si=Uq5lNEbWouex0NCr"
-								allowfullscreen></iframe></div>
-						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/iurGL-KPC-k?si=XoWM4jIKn3DiQgFF"
-								allowfullscreen></iframe></div>
-						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/_rnRh3ylFjA?si=3TTxINwQ536a-neC"
-								allowfullscreen></iframe></div>
-						<div class="video-slide"><iframe
-								src="https://www.youtube-nocookie.com/embed/W0IPoLX0B98?si=NcJvYpiKzzp3GQhw"
+								src="https://www.youtube-nocookie.com/embed/3Va-EWYicvE?si=Uq5lNEbWouex0NCr"
 								allowfullscreen></iframe></div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</section>
@@ -543,39 +536,40 @@ background-repeat: no-repeat;">
         document.getElementById("footer").innerHTML = html;
       })
       .catch(err => console.error("Failed to load page:", err));
-  </script>
-  <script>
-		$(document).ready(function () {
-			// --- Product carousel (auto slide) ---
-			let productIndex = 0;
-			const $productTrack = $("#productCarousel .carousel-track");
-			const productCardWidth = $("#productCarousel .card").outerWidth(true);
-			const totalProducts = $("#productCarousel .card").length;
+ </script>
+ <script>
+	$(document).ready(function () {
+		// --- Product carousel (auto slide) ---
+		let productIndex = 0;
+		const $productTrack = $("#productCarousel .carousel-track");
+		const productCardWidth = $("#productCarousel .card").outerWidth(true);
+		const totalProducts = $("#productCarousel .card").length;
 
-			setInterval(function () {
-				productIndex++;
-				if (productIndex >= totalProducts) { productIndex = 0; }
-				$productTrack.css("transform", "translateX(" + (-productCardWidth * productIndex) + "px)");
-			}, 3000);
+		setInterval(function () {
+			productIndex++;
+			if (productIndex >= totalProducts) { productIndex = 0; }
+			$productTrack.css("transform", "translateX(" + (-productCardWidth * productIndex) + "px)");
+		}, 3000);
 
-			// --- Video carousel (manual with buttons, 3 at a time) ---
-			let videoIndex = 0;
-			const $videoTrack = $("#videoCarousel .carousel-track");
-			const totalVideos = $("#videoCarousel .video-slide").length;
+		// --- Video carousel (manual with buttons, 3 at a time) ---
+		let videoIndex = 0;
+		const $videoTrack = $("#videoCarousel .carousel-track");
+		const totalVideos = $("#videoCarousel .video-slide").length;
 
-			$(".next").click(function () {
-				if (videoIndex < totalVideos - 3) {
-					videoIndex++;
-					$videoTrack.css("transform", "translateX(" + (-100 / 3 * videoIndex) + "%)");
-				}
-			});
-
-			$(".prev").click(function () {
-				if (videoIndex > 0) {
-					videoIndex--;
-					$videoTrack.css("transform", "translateX(" + (-100 / 3 * videoIndex) + "%)");
-				}
-			});
+		$(".next").click(function () {
+			if (videoIndex < totalVideos - 3) {
+				videoIndex++;
+				$videoTrack.css("transform", "translateX(" + (-100 / 3 * videoIndex) + "%)");
+			}
 		});
+
+		$(".prev").click(function () {
+			if (videoIndex > 0) {
+				videoIndex--;
+				$videoTrack.css("transform", "translateX(" + (-100 / 3 * videoIndex) + "%)");
+			}
+		});
+	});
 	</script>
+
 
